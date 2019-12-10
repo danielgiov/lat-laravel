@@ -33,6 +33,12 @@
                 <textarea name="content" id="content" cols="5" rows="5" class="form-control"></textarea>
             </div>
             <div class="form-group">
+                <label for="">Pilih Category</label>
+                <select name="category_id" id="category_id" class="form-control">
+                    @foreach( $categories as $category )<option value="{{ $category->id }}">{{ $category->name }}</option>@endforeach
+                </select>
+            </div>
+            <div class="form-group">
                 <div class="text-center">
                     <button class="btn
 btn-success" type="submit">
