@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -79,7 +80,7 @@
                     <div class="col-lg-4">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <a href="{{ route('home')}}" class="">Home</a>
+                                <a href="{{ route('home')}}" class="">Rumah</a>
                             </li>
                         </ul>
                         <ul class="list-group">
@@ -116,3 +117,6 @@
     </div>
 </body>
 </html>
+
+<script src="/js/toastr.min.js"></script>
+<script >@if(Session::has('success'))  toastr.success("{{ Session::get('success') }}")@endif</script>
